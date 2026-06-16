@@ -1,0 +1,199 @@
+:root {
+
+    --poke-red: rgb(239, 68, 68);
+    --poke-red-dark: rgb(185, 28, 28);
+    --poke-red-ultradark: rgb(153, 27, 27);
+    --poke-yellow: rgb(250, 204, 21);
+    --poke-blue: rgb(59, 130, 246);
+
+
+    /* Neutros y Estructura */
+    --bg-main: #22272e;
+    --bg-card: rgba(238, 203, 203, 0.886);
+    --border-color: rgba(203, 213, 225, 0.933);
+
+    --error-text: rgb(153, 27, 27);
+    --shadow: rgba(0, 0, 0, 0.7);
+    /* Sombra suave para elevación de tarjetas */
+
+    /* Fuentes */
+    --font-titles: 'Outfit', sans-serif;
+}
+
+body {
+    font-family: var(--font-titles);
+    background-color: var(--bg-main);
+    background-image: url(../img/background-pokemon.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    color: white;
+    margin: 0;
+}
+
+
+
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    background-color: var(--shadow);
+    flex-shrink: 0;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: var(--poke-red);
+}
+header img {
+    max-width:300px;
+}
+
+.subtitle {
+    margin-top: 5px;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+main {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.pokemon-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-grow: 1;
+    width: 100%;
+    
+}
+
+.pokemon-display img {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 5px solid var(--border-color);
+    border-radius: 30%;
+    padding: 15px;
+}
+
+.pokemon-display h2 {
+    font-size: 1.5rem;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--shadow)
+}
+
+.loader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: auto;
+}
+
+.error {
+    background-color: rgb(239, 68, 68, 0.8);
+    border: 2px solid var(--poke-red-ultradark);
+    border-radius: 15px;
+    padding: 10px;
+}
+
+
+.search-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.search-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    width: 100%;
+    max-width: 235px;
+    background-color: var(--poke-red);
+    border-radius: 15px;
+}
+
+.search-box input,
+.search-box button {
+    font-family: var(--font-titles);
+}
+
+.search-box input {
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+
+.search-box button {
+    padding: 5px 10px;
+    margin: 5px auto;
+    border: none;
+    border-radius: 5px;
+    background: var(--poke-red-dark);
+    font-weight: bold;
+    font-size: 1rem;;
+    color: white;
+}
+
+button:hover {
+    background: var(--poke-red-ultradark);
+}
+
+/* Elementos ocultos: necesario para ocultar el loader */
+.hidden {
+    display: none;
+}
+
+footer {
+    text-align: center;
+    flex-shrink: 0;
+    background-color: var(--shadow);
+}
+
+
+/*--------- Spinner ---------*/
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--border-color);
+    border-top: 5px solid var(--poke-red);
+    border-radius: 50%;
+    /* Esto lo hace circular */
+
+    /* Efecto de la animacion */
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+/* Animacion de rotacion */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
